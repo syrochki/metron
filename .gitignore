@@ -17,3 +17,6 @@ wheels/
 .idea
 .zed
 .swap
+
+# db
+db.sqlite3
