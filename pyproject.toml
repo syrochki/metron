@@ -8,21 +8,24 @@ authors = [
 ]
 requires-python = ">=3.14, <3.15"
 dependencies = [
-    "django-modern-rest[msgspec,openapi]>=0.16.0",
+    "channels>=4.3.2",
+    "daphne>=4.2.3",
+    "django>=6.1.2",
+    "django-liveview>=2.5.0",
     "django-stubs-ext>=6.1.2",
 ]
 
 [project.scripts]
-metron = "metron:main"
+metron = "metron.manage:main"
 
 [build-system]
-requires = ["uv_build>=0.12.3,<0.13.0"]
+requires = ["uv_build>=0.13.1, <0.14"]
 build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
     { include-group = "lint" },
-    { include-group = " test" },
+    { include-group = "test" },
 ]
 lint = [
     "django-stubs[compatible-mypy]>=6.1.2",
@@ -32,3 +35,39 @@ lint = [
 test = [
     "pytest-django[django]>=4.14.0",
 ]
+
+[tool.django-stubs]
+django_settings_module = "metron.server.settings"
+
+[tool.mypy]
+strict = true
+plugins = ["mypy_django_plugin.main"]
+exclude = [
+    "migrations",
+    ".venv",
+    ".mypy_cache",
+    ".ruff_cache",
+    "build",
+    "dist",
+]
+
+[[tool.mypy.overrides]]
+module = [
+    "annotated_types.*",
+    "msgspec.*",
+    "health_check.*",
+]
+
+[tool.ruff]
+exclude = [
+    "migrations",
+    ".venv",
+    ".mypy_cache",
+    ".ruff_cache",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
