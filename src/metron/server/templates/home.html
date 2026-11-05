@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Metron{% endblock %}
+
+{% block content %}
+<h1>Welcome to Metron</h1>
+
+<p>Your Django LiveView application is running.</p>
+
+<button type="button" data-liveview-function="say_hello" data-action="click->page#run">
+  Say hello
+</button>
+
+<div id="greeting"></div>
+{% endblock %}
