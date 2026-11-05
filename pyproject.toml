@@ -26,6 +26,7 @@ build-backend = "uv_build"
 dev = [
     { include-group = "lint" },
     { include-group = "test" },
+    "types-channels>=4.3.0.20260518",
 ]
 lint = [
     "django-stubs[compatible-mypy]>=6.1.2",

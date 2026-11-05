@@ -487,6 +487,7 @@ dev = [
     { name = "mypy" },
     { name = "pytest-django", extra = ["django"] },
     { name = "ruff" },
+    { name = "types-channels" },
 ]
 lint = [
     { name = "django-stubs", extra = ["compatible-mypy"] },
@@ -512,6 +513,7 @@ dev = [
     { name = "mypy", specifier = ">=2.4.0" },
     { name = "pytest-django", extras = ["django"], specifier = ">=4.14.0" },
     { name = "ruff", specifier = ">=0.17.0" },
+    { name = "types-channels", specifier = ">=4.3.0.20260518" },
 ]
 lint = [
     { name = "django-stubs", extras = ["compatible-mypy"], specifier = ">=6.1.2" },
@@ -767,6 +769,19 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/49/de/52729cab9d2c8de679ad015e87f11f69e092d6fb3084eb9a39735df09ce7/txaio-26.6.1.tar.gz", hash = "sha256:3ee900b2331c93457530fddbccc1a320c4e2d7ac8f9073d01c3fbe87762ccb35", size = 134555, upload-time = "2026-06-18T14:38:59.096Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/91/68/075bf851e11c9ef65bd6a0426791f0d9a0c7dae0e7f6e0b16ca67334b456/txaio-26.6.1-py3-none-any.whl", hash = "sha256:91a84a7825485a367c0b070c7399824c0e1a1e8c071cbdf3882dd3146dab587b", size = 31399, upload-time = "2026-06-18T14:38:57.774Z" },
+]
+
+[[package]]
+name = "types-channels"
+version = "4.3.0.20260518"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "asgiref" },
+    { name = "django-stubs" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/16/35/e1048eb8dc607873682a60bb034870b5135b34ee7c788c77012b04e179fa/types_channels-4.3.0.20260518.tar.gz", hash = "sha256:c1045a7f6e36b127e0c1c776a1727734cbbd1e36c4340414985ad4c3dde48d20", size = 15549, upload-time = "2026-05-18T06:06:16.092Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/fc/e3/939312e5a5f184fe54f17e323a81426d19eddde0ed25ed745fcba5c8e515/types_channels-4.3.0.20260518-py3-none-any.whl", hash = "sha256:98443bd8a5892d87b535b3b54a409441d401a60df3c426f82a79faae12bdd8e7", size = 21120, upload-time = "2026-05-18T06:06:15.045Z" },
 ]
 
 [[package]]
