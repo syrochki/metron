@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.env
+
+# development
+.DS_Store
+.idea
+.swp
+.vscode
+.zed
+.git
+
+# linters
+.mypy_cache
+.ruff_cache
+
+# project stuff(docs, license)
+LICENSE
+LICENSE.md
+docs/*
+static
+staticfiles
+.editorconfig

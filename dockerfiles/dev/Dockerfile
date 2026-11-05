@@ -1,0 +1,34 @@
+# DEV build
+FROM python:3.14-slim
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    UV_NO_SYNC=1 \
+    UV_COMPILE_BYTECODE=1 \
+    UV_LINK_MODE=copy
+
+# cache project dependencies
+COPY pyproject.toml uv.lock ./
+
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --locked --group dev --no-install-project
+
+# project installation
+COPY . .
+
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --locked --group dev
+
+
+COPY ./docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+
+EXPOSE 8000
+
+CMD ["uv", "run", "daphne", "-b", "0.0.0.0", "-p", "8000", "metron.server.asgi:application"]
