@@ -479,6 +479,7 @@ dependencies = [
     { name = "django" },
     { name = "django-liveview" },
     { name = "django-stubs-ext" },
+    { name = "whitenoise" },
 ]
 
 [package.dev-dependencies]
@@ -505,6 +506,7 @@ requires-dist = [
     { name = "django", specifier = ">=6.1.2" },
     { name = "django-liveview", specifier = ">=2.5.0" },
     { name = "django-stubs-ext", specifier = ">=6.1.2" },
+    { name = "whitenoise", specifier = ">=6.12.0" },
 ]
 
 [package.metadata.requires-dev]
@@ -852,6 +854,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/85/86/af921b0c127f2c2d953836abfd277178bcbdfdf72318f26b4793d04a0c9d/ujson-6.0.0-cp314-cp314t-win32.whl", hash = "sha256:3bd770b553bebc408b49d6fdb46efb1dc568368d949ac7813a07fcccaea044ae", size = 236539, upload-time = "2026-09-04T03:54:40.163Z" },
     { url = "https://files.pythonhosted.org/packages/79/12/bb371cd75bb779d3282e5c1efaeb5e20bada1faecba6d83cabdd36756031/ujson-6.0.0-cp314-cp314t-win_amd64.whl", hash = "sha256:683501475e3dfa935574bfd2b3d26f7393b4a880a745aeab63cc3d013027bba0", size = 236201, upload-time = "2026-09-04T03:54:41.568Z" },
     { url = "https://files.pythonhosted.org/packages/68/82/f301c155669dd0bec9e569ecd5013b61e88528b7587bec2457b96b7fce23/ujson-6.0.0-cp314-cp314t-win_arm64.whl", hash = "sha256:e1fa46cb8ddbfba2adf8277b8225e2ebf5bae435e2251c730c17bc0020f63c5e", size = 415482, upload-time = "2026-09-04T03:54:42.809Z" },
+]
+
+[[package]]
+name = "whitenoise"
+version = "6.12.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/cb/2a/55b3f3a4ec326cd077c1c3defeee656b9298372a69229134d930151acd01/whitenoise-6.12.0.tar.gz", hash = "sha256:f723ebb76a112e98816ff80fcea0a6c9b8ecde835f8ddda25df7a30a3c2db6ad", size = 26841, upload-time = "2026-02-27T00:05:42.028Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/db/eb/d5583a11486211f3ebd4b385545ae787f32363d453c19fffd81106c9c138/whitenoise-6.12.0-py3-none-any.whl", hash = "sha256:fc5e8c572e33ebf24795b47b6a7da8da3c00cff2349f5b04c02f28d0cc5a3cc2", size = 20302, upload-time = "2026-02-27T00:05:40.086Z" },
 ]
 
 [[package]]
