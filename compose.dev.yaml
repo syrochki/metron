@@ -10,7 +10,14 @@ services:
       - path: .env
         required: false
     environment:
-      VALKEY_URL: redis://valkey:6379/0
+      DEBUG: ${DEBUG}
+      # SECRET_KEY: ${SECRET_KEY}
+      # HEALTH_CHECK_SECRET_TOKEN: ${HEALTH_CHECK_SECRET_TOKEN}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS}
+      DJANGO_LOG_LEVEL: ${DJANGO_LOG_LEVEL}
+
+      CACHE_HOST: ${CACHE_HOST}
+      CACHE_PORT: ${CACHE_PORT}
     volumes:
       - ./src:/app/src
       - sqlite_data:/app/data
