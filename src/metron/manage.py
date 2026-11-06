@@ -4,6 +4,8 @@
 import os
 import sys
 
+from metron.server import settings
+
 
 def main() -> None:
     """Run administrative tasks."""
@@ -20,4 +22,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    print(settings.DEBUG)
     main()

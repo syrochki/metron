@@ -16,18 +16,16 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 from django.views.generic import TemplateView
-
-from metron.server.apps.blog import urls
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("blog/", include(urls)),
+    path("blog/", include("metron.server.apps.blog.urls")),
     path(
         "",
         TemplateView.as_view(template_name="home.html"),
         name="home",
-    ), 
+    ),
 ]
